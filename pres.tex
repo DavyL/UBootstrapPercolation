@@ -54,7 +54,7 @@
 \title[title] % (optional, use only with long paper titles)
 {$\mathcal{U}$-Bootstrap percolation}
 
-\author[Davy, Gjorgjevski] % (optional, use only with lots of authors)
+\author[Davy, Gjorgjevski, Pak] % (optional, use only with lots of authors)
 {Leo Davy \and Martin Gjorgjevski \and Alexandre Pak}
 % - Use the \inst{?} command only if the authors have different
 %   affiliation.
@@ -64,7 +64,7 @@
   ENS Lyon \\
   M2 Advanced Mathematics}
 % - Use the \inst command only if there are several affiliations.
-% - Keep it simple, no one is interested in your street address.
+% - Keep it tildeple, no one is interested in your street address.
 
 \date[Short Occasion] % (optional)
 {March 2022}
@@ -80,6 +80,18 @@
   \end{beamercolorbox}}%
   \vskip0pt%
 }
+\setbeamertemplate{headline}
+{%
+  \leavevmode%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex]{section in head/foot}%
+    \hbox to .5\paperwidth{\hfil\insertsectionhead\hfil}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex]{subsection in head/foot}%
+    \hbox to .5\paperwidth{\hfil\insertsubsectionhead\hfil}
+  \end{beamercolorbox}%
+}
+
+\setbeamertemplate{navigation symbols}{} 
 \subject{Talks}
 \begin{document}
 
@@ -87,7 +99,7 @@
 \begin{frame}{Outline of the presentation}
 	\begin{enumerate}
 		\item Introduction to $\mathcal{U}$-bootstrap and examples
-		\item Percolation and universal classes 
+		\item Percolation and universality classes 
 		\item Stable directions and critical densities
 		\item Behaviour around phase transition
 		\item Return to examples
@@ -98,12 +110,139 @@
 \end{frame}
 \begin{section}{ Introduction to $\mathcal{U}$-bootstrap and examples}
 	\begin{frame}
-
+		Definition and example of $r$-neighbour bootstrap
+	\end{frame}
+	\begin{frame}
+		Definition for general $\mathcal{U}$\\
+		Example for 1 or 2 rules families
+	\end{frame}
+	\begin{frame}
+		Definition and simulation of $r$-neighbour
+	\end{frame}
+	\begin{frame}
+		Definition and simulation of OP
+	\end{frame}
+	\begin{frame}
+		Definition and simulation of spiral
+	\end{frame}
+	\begin{frame}
+		Definition and simulation of DTBP
 	\end{frame}
 \end{section}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{section}{Percolation and universality classes}
+	\begin{frame}
+		Motivation for the model \\
+		Random initial set
+	\end{frame}
+	\begin{frame}
+		Definition of $\theta_q(n)$ and $\theta_q$ \\
+		Phase transition
+	\end{frame}
+	\begin{frame}
+		Classification of local homogeneous monotone cellular automatas
+	\end{frame}
+	\begin{frame}
+		Review of previous examples
+	\end{frame}
+\end{section}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{section}{Stable directions and critical densities}
+	\begin{frame}
+		A geometric criterion to find the class of a model\\
+		Stable/unstable directions\\
+	\end{frame}
+	\begin{frame}
+		Universality classes based on stable directions
+	\end{frame}
+	\begin{frame}
+		Application to $r$-neighbours (and explicit threshold for $r=2$)
+	\end{frame}
+	\begin{frame}
+		Sketch of proof for universality classes
+	\end{frame}
+	\begin{frame}
+		For supercritical and critical models, behaviour on $\mathbb{Z}^d$ is trivial. Need new tools for subcritical models\\
+		Definition of $\tilde\theta $ and $  \tilde q_c $ .
+	\end{frame}
+	\begin{frame}
+		Definition of critical densities $u\mapsto d_u$
+	\end{frame}
+	\begin{frame}
+		\begin{theorem}{Theorem 3.1}
+			$$\tilde q_c = \sup_u d_u$$
+		\end{theorem}
+	\end{frame}
+	\begin{frame}
+		(Sketch of ?) proof of theorem 3.1
+	\end{frame}
+	\begin{frame}
+		Bounds on $\tilde q_c$
+	\end{frame}
+	\begin{frame}
+		Use of OP to obtain bounds based on the trivial bound for DTBP
+	\end{frame}
+	\begin{frame}
+		Interest of th 3.1 in some situations
+	\end{frame}
+	\begin{frame}
+		Application for spiral model
+	\end{frame}
+\end{section}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{section}{Behaviour around phase transition}
+	\begin{frame}
+		\begin{theorem}{Theorem 3.5}
+			$$\tilde q_c $$ is where exponential decay happens
+		\end{theorem}
+	\end{frame}
+	\begin{frame}
+		Proof of th 3.5
+	\end{frame}
 
-
-
+	\begin{frame}
+		Answers to questions 12 and 14 of Bolobas
+	\end{frame}
+	\begin{frame}
+		Noise sensitivity and continuity
+		\begin{theorem}{Theorem 3.6}
+			
+		\end{theorem}
+	\end{frame}
+\end{section}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{section}{KCM}
+	\begin{frame}
+		Definition of KCM
+	\end{frame}
+	\begin{frame}
+		\begin{theorem}{Theorem 3.7}
+			
+		\end{theorem}
+	\end{frame}
+	\begin{frame}
+		Proof of theorem 3.7
+	\end{frame}
+\end{section}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{section}{Conclusion and open questions}
+	\begin{frame}
+		Methods introduced allow to
+		\begin{enumerate}
+			\item Recover and generalize previously known results
+			\item Study in depth and generality subcritical models
+			\item Characterize the phase transition using $\tilde q_c$
+			\item Obtain bounds on phase transition for subcritical models
+			\item Answer previously open questions
+		\end{enumerate}
+		But they do not (yet) permit to answer the following questions
+		\begin{enumerate}
+			\item $q_c = \tilde q_c$ ?
+			\item continuity of $u\mapsto d_u$
+			\item dynamics on the torus
+		\end{enumerate}
+	\end{frame}
+\end{section}
 \end{document}
 
 
