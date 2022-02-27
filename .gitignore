@@ -6,3 +6,9 @@
 *.gz
 *.toc
 *.aux
+*.log
+*.aux
+*.nav
+*.out
+*.gz
+*.toc
