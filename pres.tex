@@ -96,153 +96,130 @@
 \begin{document}
 
 \maketitle
+
 \begin{frame}{Outline of the presentation}
 	\begin{enumerate}
-		\item Introduction to $\mathcal{U}$-bootstrap and examples
-		\item Percolation and universality classes 
-		\item Stable directions and critical densities
-		\item Behaviour around phase transition
-		\item Return to examples
-		\item Continuity and noise sensitivity
-		\item KCM
+		\item Introduction to $\mathcal{U}$-bootstrap percolation
+		\item Universal classes and stable directions
+		\item Critical densities
+		\item Applications of critical densities on Spiral and DTBP
+		\item
 		\item Conclusion and open questions
 	\end{enumerate}
 \end{frame}
-\begin{section}{ Introduction to $\mathcal{U}$-bootstrap and examples}
-	\begin{frame}
-		Definition and example of $r$-neighbour bootstrap
-	\end{frame}
-	\begin{frame}
-		Definition for general $\mathcal{U}$\\
-		Example for 1 or 2 rules families
-	\end{frame}
-	\begin{frame}
-		Definition and simulation of $r$-neighbour
-	\end{frame}
-	\begin{frame}
-		Definition and simulation of OP
-	\end{frame}
-	\begin{frame}
-		Definition and simulation of spiral
-	\end{frame}
-	\begin{frame}
-		Definition and simulation of DTBP
-	\end{frame}
-\end{section}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{section}{Percolation and universality classes}
-	\begin{frame}
-		Motivation for the model \\
-		Random initial set
-	\end{frame}
-	\begin{frame}
-		Definition of $\theta_q(n)$ and $\theta_q$ \\
-		Phase transition
-	\end{frame}
-	\begin{frame}
-		Classification of local homogeneous monotone cellular automatas
-	\end{frame}
-	\begin{frame}
-		Review of previous examples
-	\end{frame}
-\end{section}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{section}{Stable directions and critical densities}
-	\begin{frame}
-		A geometric criterion to find the class of a model\\
-		Stable/unstable directions\\
-	\end{frame}
-	\begin{frame}
-		Universality classes based on stable directions
-	\end{frame}
-	\begin{frame}
-		Application to $r$-neighbours (and explicit threshold for $r=2$)
-	\end{frame}
-	\begin{frame}
-		Sketch of proof for universality classes
-	\end{frame}
-	\begin{frame}
-		For supercritical and critical models, behaviour on $\mathbb{Z}^d$ is trivial. Need new tools for subcritical models\\
-		Definition of $\tilde\theta $ and $  \tilde q_c $ .
-	\end{frame}
-	\begin{frame}
-		Definition of critical densities $u\mapsto d_u$
-	\end{frame}
-	\begin{frame}
-		\begin{theorem}{Theorem 3.1}
-			$$\tilde q_c = \sup_u d_u$$
-		\end{theorem}
-	\end{frame}
-	\begin{frame}
-		(Sketch of ?) proof of theorem 3.1
-	\end{frame}
-	\begin{frame}
-		Bounds on $\tilde q_c$
-	\end{frame}
-	\begin{frame}
-		Use of OP to obtain bounds based on the trivial bound for DTBP
-	\end{frame}
-	\begin{frame}
-		Interest of th 3.1 in some situations
-	\end{frame}
-	\begin{frame}
-		Application for spiral model
-	\end{frame}
-\end{section}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{section}{Behaviour around phase transition}
-	\begin{frame}
-		\begin{theorem}{Theorem 3.5}
-			$$\tilde q_c $$ is where exponential decay happens
-		\end{theorem}
-	\end{frame}
-	\begin{frame}
-		Proof of th 3.5
-	\end{frame}
 
-	\begin{frame}
-		Answers to questions 12 and 14 of Bolobas
-	\end{frame}
-	\begin{frame}
-		Noise sensitivity and continuity
-		\begin{theorem}{Theorem 3.6}
-			
-		\end{theorem}
-	\end{frame}
-\end{section}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{section}{KCM}
-	\begin{frame}
-		Definition of KCM
-	\end{frame}
-	\begin{frame}
-		\begin{theorem}{Theorem 3.7}
-			
-		\end{theorem}
-	\end{frame}
-	\begin{frame}
-		Proof of theorem 3.7
-	\end{frame}
-\end{section}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{section}{Conclusion and open questions}
-	\begin{frame}
-		Methods introduced allow to
+\begin{frame}{$d_u^\theta$ measures directions that are difficult to infect}
+	\begin{block}{Critical densities with conic boundary conditions}
+		For $u\in \mathbb{S}^1$ and $\theta\in[-\pi, \pi]$
+		$$d_u^\theta := \inf\left\{q\in[0,1], \sum_n n\mathbb{P}_q(0\not\in [(A\cup V_{u,u+\theta})\cap B_n]) < \infty\right\}$$
+	\end{block}
+	Morally, the critical probability with infection of $V_{u,u+\theta} = \mathbb{H}_u \cap \mathbb{H}_{u+\theta}$. 
+	\begin{itemize}
+		\item The summand decays slowly in $n$ when it is hard to infect the origin using only infections at distance less than $n$. So, when it is hard to infect 0,  $d_u^\theta$ is large\footnote{non zero...}.
+		\item When $\theta \sim \pm \pi$, few sites are infected, so it is easy for the origin not to be infected, the summand can be large. Hence, $d_u^\theta$ decreases when $\theta\to 0$
+		\item $d_u^\pm := \lim_{\theta \to 0^\pm} d_u^\theta$ can be large when a small number of infections is not enough to infect the origin, even with a whole half plane infected !. 
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\begin{theorem}
+		For any $\mathcal{U}$-bootstrap percolation model, its critical probability
+		\begin{equation*}
+			\tilde q_c = \inf\{q\in[0,1], \sum_n n\mathbb{P}_q(0\not\in [A\cap B_n]) < \infty\}
+		\end{equation*}
+		is equal to the maximal value of its critical density function
+		\begin{equation*}
+			d_u = \max_{0^\pm} \inf\{q\in[0,1], \sum_n n\mathbb{P}_q(0\not\in[(A\cup V_{u, u + 0^\pm})\cap B_n] < \infty\}
+		\end{equation*}
+		for $u$ in any semicircle $C$, i.e.,
+		\begin{equation*}
+			\tilde q_c = \inf_{C\in \mathcal{C}} \sup_{u\in C} d_u.
+		\end{equation*}
+
+	\end{theorem}
+\end{frame}
+
+\begin{frame}
+	Let's denote $E_{u, \theta} = \{0\not\in [(A\cup V_{u, u+\theta})\cap B_n]\}$. Then,
+	\begin{equation*}
+		E_{u, \pm\pi} = \{ 0 \not\in [A\cap B_n]\} \supset E_{u, \theta}
+	\end{equation*}
+	which gives that the following holds for any $u$
+	\begin{equation*}
+		\tilde q_c \geq \sup_\theta \sup_u d_u^\theta \geq \limsup_{\theta\to 0} \sup_u d_u^\theta = \sup_u d_u.
+	\end{equation*}
+	The theorem states that all those quantities are equal. 
+	\begin{block}{Meaning of the theorem}
+		The difficulty of the model is as hard as its most difficult direction. In this direction, infecting a half plane doesn't affect the infection of the origin.
+	\end{block}
+\end{frame}
+
+\begin{frame}{Proving $\sup d_u \geq \tilde q_c$}
+	The goal is to show, that for any $q'>\sup d_u$ it holds that
+	\begin{equation*}
+		\sum_n n \mathbb{P}_{q'}(0\not\in[A\cap B_n]) < \infty.
+	\end{equation*}
+	The idea is to show that, at $q'$, the origin is infected most of the time.
+	\begin{block}{2-step percolation : $q' = \sup d_u + \varepsilon$}
 		\begin{enumerate}
-			\item Recover and generalize previously known results
-			\item Study in depth and generality subcritical models
-			\item Characterize the phase transition using $\tilde q_c$
-			\item Obtain bounds on phase transition for subcritical models
-			\item Answer previously open questions
+			\item Infect sites with probability $\varepsilon$ to find some structures
+			\item Infecting new sites with probability $q$ allows structures to grow
 		\end{enumerate}
-		But they do not (yet) permit to answer the following questions
-		\begin{enumerate}
-			\item $q_c = \tilde q_c$ ?
-			\item continuity of $u\mapsto d_u$
-			\item dynamics on the torus
-		\end{enumerate}
-	\end{frame}
-\end{section}
+	\end{block}
+\end{frame}
+
+\begin{frame}{Some details on the proof}
+	\begin{itemize}
+		\item The structures that grow are droplets, with sides $(u_i)_{i=1}^n$ depending on $\sup d_u$.
+		\item In the second percolation, droplets of size $L$ grow into droplets of size $\geq (1+\delta)L$, for some $\delta > 0$.
+		\item The proof can be done in any semi-circle, so we can get $\tilde q_c = \inf_{C\in\mathcal{C}}\sup_{u\in C} d_u$
+		\item The proof contains that $\forall q> \sup d_u$, there exists a constant $c(q)>0$ such that
+			\begin{equation*}
+				\theta_n(q) \leq e^{-c(q)n}
+			\end{equation*}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Applying the theorem}
+	\begin{theorem}
+		For any update rules $\mathcal{U}$,
+		\begin{equation*}
+			q_c \leq \tilde q_c = \sup_{u\in\mathbb{S}^1} d_u = \inf_{C\in\mathcal{C}} \sup_{u\in C} d_u.
+		\end{equation*}
+		In particular, if $\mathcal{U}$ is not subcritical, then $\tilde q_c = q_c = 0$ 
+	\end{theorem}
+	So, having knowledge on $u\mapsto d_u$ allows to upper bound $q_c$...
+	\begin{block}{Proposition : (It's harder for submodels to infect)}
+		For any sub-collection of rules $\mathcal{U}'\subset \mathcal{U}$
+		\begin{equation*}
+			q_c(\mathcal{U}) \leq \tilde q_c (\mathcal{U}) \leq \inf_C \sup_{u\in C} d_u(\mathcal{U'})
+		\end{equation*}
+	\end{block}
+	... and it is not even necessary to know the critical density for the whole set of rules to get such bounds.
+\end{frame}
+
+\begin{frame}{First level bound}
+	\begin{block}{$DTBP$ : Directed Triangular Bootstrap Percolation}
+		Let $\mathcal{U}' = \{(-1, -1), (0,1)\}$, one of the rules of DTBP, then
+		\begin{equation*}
+			q_c(DTBP) \leq \tilde q_c(DTBP) \leq \inf_{C\in\mathcal{C}} \sup_{u\in C} d_u(\mathcal{U}').
+		\end{equation*}
+		Applying a general formula for one rule families (using OP) gives $q_c(DTBP) \leq 0.245...$\footnote{Previous known bound was 0.312}
+	\end{block}
+\end{frame}
+
+\begin{frame}{Second level bound}
+	However, knowing one rule subfamilies is not enough.
+	\begin{block}{Spiral}
+		For spiral, it is possible to compute $d_u$ for all pairs of rules, such that the difficulty on pairs is the same as the difficulty of some Bidirectional OP :
+		\begin{equation*}
+			q_c(Spiral) \leq \tilde q_c(Spiral) \leq 1 - p_c^{OP}.
+		\end{equation*}
+		And the result is tight.
+	\end{block}
+
+\end{frame}
+
 \end{document}
 
 
