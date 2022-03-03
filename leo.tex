@@ -7,12 +7,15 @@
 	Morally, the critical probability with infection of $V_{u,u+\theta} = \mathbb{H}_u \cap \mathbb{H}_{u+\theta}$. 
 	\begin{itemize}
 		\item The summand decays slowly in $n$ when it is hard to infect the origin using only infections at distance less than $n$. So, when it is hard to infect 0,  $d_u^\theta$ is large\footnote{non zero...}.
-		\item When $\theta \sim \pm \pi$, few sites are infected, so it is easy for the origin not to be infected, the summand can be large. Hence, $d_u^\theta$ decreases when $\theta\to 0$
-		\item $d_u^\pm := \lim_{\theta \to 0^\pm} d_u^\theta$ can be large when a small number of infections is not enough to infect the origin, even with a whole half plane infected !. 
+		\item When $\theta \sim \pm \pi$, few sites are infected, so it is easy for the origin not to be infected, the summand can be large. Hence, $d_u^\theta$ decreases when $\theta\to 0$.
 	\end{itemize}
 \end{frame}
 
+
+
+
 \begin{frame}
+
 	\begin{theorem}
 		For any $\mathcal{U}$-bootstrap percolation model, its critical probability
 		\begin{equation*}
@@ -28,9 +31,31 @@
 		\end{equation*}
 
 	\end{theorem}
+
 \end{frame}
 
-\begin{frame}
+\begin{frame}{Phase diagram in a fixed direction $u$}
+	\begin{center}
+    	 \includegraphics[width=\textwidth]{decay_theta.jpg}
+	\end{center}
+
+\end{frame}
+
+\begin{frame}{Phase diagram in a fixed direction $u$}
+\begin{columns}
+\begin{column}{0.4\textwidth}
+     \includegraphics[width=\textwidth]{decay_theta.jpg}
+\end{column}
+\begin{column}{0.6\textwidth}  
+    \begin{center}
+     %%%%% this is a minipage, so \textwidth is already adjusted to the size of the column
+     \includegraphics[width=1.1\textwidth]{diag_theta.jpg}
+     \end{center}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Monotonicity}
 	Let's denote $E_{u, \theta} = \{0\not\in [(A\cup V_{u, u+\theta})\cap B_n]\}$. Then,
 	\begin{equation*}
 		E_{u, \pm\pi} = \{ 0 \not\in [A\cap B_n]\} \supset E_{u, \theta}
@@ -43,6 +68,18 @@
 	\begin{block}{Meaning of the theorem}
 		The difficulty of the model is as hard as its most difficult direction. In this direction, infecting a half plane doesn't affect the infection of the origin.
 	\end{block}
+\end{frame}
+
+\begin{frame}{Consequence of monotonicity}
+	\begin{center}
+    	 	\includegraphics[width=0.9\textwidth]{semi_circ.jpg}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+	\begin{center}
+    	 	\includegraphics[width=\textwidth]{th_fig.jpg}
+	\end{center}
 \end{frame}
 
 \begin{frame}{Proving $\sup d_u \geq \tilde q_c$}
@@ -69,6 +106,9 @@
 				\theta_n(q) \leq e^{-c(q)n}
 			\end{equation*}
 	\end{itemize}
+	\begin{center}
+    	 	\includegraphics[width=0.5\textwidth]{droplet.jpg}
+	\end{center}
 \end{frame}
 
 \begin{frame}{Applying the theorem}
@@ -97,6 +137,9 @@
 		\end{equation*}
 		Applying a general formula for one rule families (using OP) gives $q_c(DTBP) \leq 0.245...$\footnote{Previous known bound was 0.312}
 	\end{block}
+	\begin{center}
+    	 	\includegraphics[width=0.5\textwidth]{dtbp.jpg}
+	\end{center}
 \end{frame}
 
 \begin{frame}{Second level bound}
@@ -108,5 +151,7 @@
 		\end{equation*}
 		And the result is tight.
 	\end{block}
-
+	\begin{center}
+    	 	\includegraphics[width=0.5\textwidth]{spiral.jpg}
+	\end{center}
 \end{frame}
