@@ -7,18 +7,14 @@
 \begin{itemize}
 \item Oriented percolation (OP) is one of the simplest subcritical BP model.
 \item It is a BP model with one-family rule $\mathcal{U} = \{U\} = \{\{-1, 1\}, \{1, 1\}\}$
-\item Some of the well-known results in the field are reviewed in Durrett's article \footnote{R. \textsc{Durret}, \emph{Oriented Percolation in Two DImensions}, The Annals of Probability}
+\item Some of the well-known results in the field are reviewed in Durrett's article \footnote{R. \textsc{Durret}, Oriented Percolation in Two Dimensions, \emph{The Annals of Probability}}
 \item We will follow this article to introduce some non-trivial results about OP
 \end{itemize}
 
 \begin{alertblock}{Remark}
-	In the article of Durrett bond percolation is considered rather than site. However, by one simple trick one can show that in the case of OP the two are equivalent.
+	In the article of Durrett bond percolation is considered rather than site. However, it can be shown that the results obtained also apply to site OP.
 \end{alertblock}
 
-\end{frame}
-
-\begin{frame}
-	there will be an image with the trick
 \end{frame}
 
 \begin{frame}
@@ -43,7 +39,7 @@
 	\end{block}
 	\begin{block}{Proof by a picture}
 		\begin{figure}
-			\caption{Taken from Durret's review}
+			\caption{Taken from \textsc{Durret}}
 			\includegraphics[height = 3cm]{image_edge_speed}
 			\centering
 		\end{figure}
@@ -114,6 +110,20 @@
 	\frametitle {Open questions and conjectures about OP}
 	\begin{itemize}
 		\item We remind that $q_{c}=\inf \left\{q \in[0,1], \mathbb{P}_{q}\left([A]=\mathbb{Z}^{2}\right)=1\right\}$, whereas $\tilde{q}_{c}=\inf \left\{q \in[0,1], \sum_{n} n \theta_{n}(q)<\infty\right\}$
+	\end{itemize}
+	\begin{block}{Conjecture}
+		For all BP models (all update families) we have: $q_{c} = \tilde{q}_{c}$.
+	\end{block}
+	\begin{itemize}
+		\item It would be practical to know if the complication of taking right and left limits to define the critical density $d_{u} = max(d_{u}^{+}, d_{u}^{-})$ is necessary.
+	\end{itemize}
+	\begin{block}{Question}
+		What are the continuity properties of the function $(u, \theta) \rightarrow d_{u}^{\theta}$?
+	\end{block}
+\end{frame}
+
+
+\begin{frame}
 	\end{itemize}
 	\begin{block}{Conjecture}
 		For all BP models (all update families) we have: $q_{c} = \tilde{q}_{c}$.
