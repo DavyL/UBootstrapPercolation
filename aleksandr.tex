@@ -7,7 +7,7 @@
 \begin{itemize}
 \item Oriented percolation (OP) is one of the simplest subcritical BP model.
 \item It is a BP model with one-family rule $\mathcal{U} = \{U\} = \{\{-1, 1\}, \{1, 1\}\}$
-\item Some of the well-known results in the field are reviewed in Durrett's article \cite{10.1214/aop/1176993140}
+\item Some of the well-known results in the field are reviewed in Durrett's article \footnote{R. \textsc{Durret}, \emph{Oriented Percolation in Two DImensions}, The Annals of Probability}
 \item We will follow this article to introduce some non-trivial results about OP
 \end{itemize}
 
@@ -26,7 +26,7 @@
 	\begin{itemize}
 		\item We remind that the parameter of OP - $p = 1 - q$ stands for the intensity of \textbf{healthy} sites
 		\item We let $p_{c}^{OP}$ be the critical probability for OP
-		\item We say that $x \rightarrow y$  if there exist $x_{0} = x, x_{1}, \ldots, x_{n} = y$ such that $x_{i} - x_{i - 1} \in U$ and $x_{i}$ open for $0 < i \leq n$, i.e. there exists an OP path between x and y.
+		\item We say that $x \rightarrow y$  if there exist $x_{0} = x, x_{1}, \ldots, x_{n} = y$ such that $x_{i} - x_{i - 1} \in \mathcal{U}$ and $x_{i}$ open for $0 < i \leq n$, i.e. there exists an OP path between x and y.
 		\item We are naturally interested in the event $\{0 \rightarrow \infty \} = \{ \cap_{i = 1}^{\infty} L_{i} \neq \emptyset \}$, where $L_{n} = \{x: (0, 0) \rightarrow (x, n) \}$ - the set of sites on the height n connected to 0.
 		\item Notice that saying that $0 \rightarrow \infty$ is equivalent to saying that 0 is not infected in the BP model (duality BP - OP).
 	\end{itemize}
@@ -35,14 +35,18 @@
 \begin{frame}
 	\frametitle{Edge Speed}
 	\begin{itemize}
-		\item We call $r_{n} = \sup \{x \in Z, \exists y \leq 0, (y, 0) \rightarrow (x, n)\}$ the right edge with the convention $\sup \{\emptyset\} = - \infty$
+		\item We denotel $r_{n} = \sup \{x \in \mathbb{Z}, \exists y \leq 0, (y, 0) \rightarrow (x, n)\}$ - the rightmost edge with the convention $\sup \{\emptyset\} = - \infty$
 		\item This definition may seem a bit artificial at first glance (why would we look at $(y, 0) \rightarrow (x, n)$ for some $y \leq 0$ rather than $(0, 0) \rightarrow (x, n)$)?
 	\end{itemize}
 	\begin{block}{Property}
 		Provided that $L_{n} \neq \emptyset$, we have r$_{n} = \sup L_{n} = \sup \{x: (0, 0) \rightarrow (x, n) \} $
 	\end{block}
-	\begin{block}{There will be an image with the proof}
-	...
+	\begin{block}{Proof by a picture}
+		\begin{figure}
+			\caption{Taken from Durret's review}
+			\includegraphics[height = 3cm]{image_edge_speed}
+			\centering
+		\end{figure}
 	\end{block}
 \end{frame}
 
@@ -59,8 +63,8 @@
 		Moreover, we have that $\alpha$ is continuous and strictly increasing on $[p_{c}^{OP}, 1]$ with $\alpha(p_{c}^{OP}) = 0, \alpha(1) = 1$ and $\alpha(p) = -\infty$ for $p < p_{c}^{OP}$.
 	\end{block}
 	\begin{itemize}
-		\item Intuitively edge speed tells us how far the most right path (starting from height 0 and to the left of the origin) is expected to go.
-		\item Edge speed has the following "criticality" properties for the most right path which we state without proof
+		\item Intuitively edge speed tells us how far the rightmost path (starting from height 0 and to the left of the origin) is expected to go.
+		\item Edge speed has the following "criticality" properties which we state without proof
 	\end{itemize}
 
 \end{frame}
@@ -68,7 +72,7 @@
 \begin{frame}
 	\frametitle{Properties of edge speed}
 	\begin{block}{Property 1}
-		For $p > p_{c}^{OP}$ (above criticality for OP) and $\alpha_{0} < \alpha(p)$ with positive probability there exists an infinite OP path $((a_{i}, i))_{i \in \mathcal{N}}$ with $a_{0} = 0$ and $\inf_{n} \frac{a_{n}}{n} \geq \alpha_{0}$. Intuitively this means that we have chances to get an infinite path that goes sufficiently far to the right.
+		For $p > p_{c}^{OP}$ (above criticality for OP) and $\alpha_{0} < \alpha(p)$ with positive probability there exists an infinite OP path $((a_{i}, i))_{i \in \mathcal{N}}$ with $a_{0} = 0$ and $\inf_{n} \frac{a_{n}}{n} \geq \alpha_{0}$. Intuitively this means that we have chances to get an infinite path that goes sufficiently far (but below edge speed) to the right.
 	\end{block}
 
 	\begin{block}{Property 2}
@@ -76,15 +80,15 @@
 		$$
 			\mathbb{P}_{p}(r_{n} \geq \alpha_{0} n) \leq e^{-\gamma n}
 		$$
-		This means that with respect to n it is exponentially unlikely to go further than edge speed to the right.	
+		This exponential decay shows that it is unlikely to find a path that goes too far (further than edge speed) to the right.	
 	\end{block}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Critical densities of OP}
 	\begin{itemize}
-		\item We let $\phi (u) = 1 - \alpha^{-1}(|tan(u)|)$, where $\alpha^{-1}$ is the inverse of the edge speed function $\alpha$.
-		\item The following theorem expresses the critical density of OP depending on the direction $u$ which is parametrized by the angle: $u \in [- \pi, \pi]$.
+		\item We let $\psi (u) = 1 - \alpha^{-1}(|tan(u)|)$, where $\alpha^{-1}$ is the inverse of the edge speed function $\alpha$.
+		\item The following theorem expresses the critical density of OP depending on the direction $u$ which is parametrized by the angle it makes with the origin: $u \in [- \pi, \pi]$.
 	\end{itemize}
 	\begin{block}{Theorem}
 		The critical densities of the BP percolation with $\mathcal{U} = \{(1, 1,) (-1, 1)\}$ (dual to OP) are given by
@@ -122,8 +126,5 @@
 	\end{block}
 \end{frame}
 
-\begin{frame}
-	\frametitle{Bibliography}
-	\bibliography{refs}
-\end{frame}
+
 
